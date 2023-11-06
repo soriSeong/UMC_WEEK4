@@ -1,11 +1,24 @@
-import { movies } from "./moviesDummy";
+import { moviesDummy } from "./moviesDummy";
 import Movies from "./components/Movies";
-
-const IMAGE_BASE_URL = 'http://image.tmdb.org/t/p/';
 
 function App() {
     return(
         <div>
+            <div className="app_container">
+                {
+                    moviesDummy.results.map((item) =>{
+                        return(
+                            <Movies
+                            key ={item.id}
+                            title = {item.title}
+                            poster_path ={item.poster_path}
+                            vote_average ={item.vote_average}
+                            />
+                        )
+                    }
+                    )
+                }
+            </div>
 
         </div>
     );
