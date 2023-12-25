@@ -1,30 +1,28 @@
 import React from "react";
 import { moviesDummy } from "./moviesDummy";
-import Movies from "./components/Movies";
-
+import Movie from "./Components/Movie";
+import { AppContainer } from "./Components/Movie.style";
 
 function App() {
 
+
     return(
         <div>
-            <div className="app_container">
+            <AppContainer>
                 {
-                    moviesDummy.results.map((item) =>{
+                    moviesDummy.results.map((movie) =>{
                         return(
-                            <>
-                                <Movies 
-                                key = {item.id}
-                                title = {item.title}
-                                poster_path ={item.poster_path}
-                                vote_average ={item.vote_average}
-                                overview={item.overview}
-                                />
-                            </>
+                            
+                            <Movie 
+                                key = {movie.id}
+                                movie={movie}
+                            />
+                            
                         )
                     }
                     )
                 }
-            </div>
+            </AppContainer>
 
         </div>
     );

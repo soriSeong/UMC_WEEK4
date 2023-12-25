@@ -1,13 +1,13 @@
+import styled from "styled-components";
 
-.app_container {
+const AppContainer = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-}
+`;
 
-
-.movie-container {
+const MovieBox = styled.div`
     width: 300px;
     border : 1px solid black;
     background-color: darkblue;
@@ -16,20 +16,22 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-}
 
-.movie-container img {
-    max-width: 90%;
-}
+    .movie-poster {
+        width: 100%;
+    }
 
-.movie_info {
+    
+`;
+
+const MovieInfo = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-}
+`;
 
-.infoBox {
+const InfoBox = styled.div`
     position: absolute;
     top:0;
     left: 50%;
@@ -42,21 +44,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    visibility: hidden;
-}
 
-.infoTitle {
-    margin-top: 50px;
-}
+    opacity: 0;
+    transition: opacity 0.3s;
 
-.overview {
-    margin-top: 30px;
-}
+    .infoTitle {
+        margin-top: 50px;
+    }
+    
+    .overview {
+        margin-top: 30px;
+    }
 
-.visible {
-    visibility: visible;
-}
+    &:hover {
+        opacity:1;
+    }
+    
+`;
 
-.hidden {
-    visibility: hidden;
-}
+export {AppContainer,MovieBox,MovieInfo,InfoBox};
